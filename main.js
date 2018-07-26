@@ -9,7 +9,17 @@ var coffeeShop = {
   },
 
   makeDrink: function (drinkType) {
-    // TODO: Finish this method
+    if (!this.drinkRequirements[drinkType]) {
+      alert(`Excuse me? We don't make ${drinkType} you fool`)
+      return;
+    } else if (this.beans - this.drinkRequirements[drinkType] > 0) {
+      this.beans -= this.drinkRequirements[drinkType]
+      alert(`Aw yis, one ${drinkType} comin right up`)
+      return;
+    } else {
+      alert("Sorry we're an incompetent coffee shop and we're all out of beans!")
+      return;
+    }
   }
 }
 
